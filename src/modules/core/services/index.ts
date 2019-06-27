@@ -1,2 +1,2 @@
-export * from './api.service';
-export * from './pagination-api.service';
+export { ApiService } from './api.service';
+export { PaginationApiService } from './pagination-api.service';

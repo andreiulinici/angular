@@ -11,11 +11,14 @@ export class UserDataComponent implements OnInit {
 
   @Input() user: UserInterface;
 
-  constructor(@Optional() private parent: UserComponent) { }
+  displayedColumns = ['avatar', 'first_name', 'last_name', 'email'];
 
-  ngOnInit() {
+  constructor(@Optional() private parent: UserComponent) {
     console.log(this.parent);
-    this.parent.user = { ...this.user };
+    if (this.parent) {
+      this.parent.user = { ...this.user };
+    }
   }
 
+  ngOnInit() { }
 }
